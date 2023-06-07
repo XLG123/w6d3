@@ -1,2 +1,113 @@
   [1m[35m (148.0ms)[0m  [1m[35mCREATE DATABASE "FirstRoutes_development" ENCODING = 'unicode'[0m
   [1m[35m (62.0ms)[0m  [1m[35mCREATE DATABASE "FirstRoutes_test" ENCODING = 'unicode'[0m
+  [1m[35m (251.6ms)[0m  [1m[35mCREATE DATABASE "FirstRoutes_development" ENCODING = 'unicode'[0m
+  [1m[35m (114.9ms)[0m  [1m[35mCREATE DATABASE "FirstRoutes_test" ENCODING = 'unicode'[0m
+Started GET "/" for ::1 at 2023-06-07 16:20:12 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/vczaran/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vczaran/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.2ms | Allocations: 527)
+Completed 200 OK in 25ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 4554)
+
+
+Started GET "/?/users" for ::1 at 2023-06-07 16:20:57 -0400
+Processing by Rails::WelcomeController#index as */*
+  Parameters: {"/users"=>nil}
+  Rendering /Users/vczaran/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vczaran/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.7ms | Allocations: 278)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 1026)
+
+
+Started GET "/?/users" for ::1 at 2023-06-07 16:22:36 -0400
+Processing by Rails::WelcomeController#index as */*
+  Parameters: {"/users"=>nil}
+  Rendering /Users/vczaran/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vczaran/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 23)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 279)
+
+
+Started GET "/?/users" for ::1 at 2023-06-07 16:24:07 -0400
+Processing by Rails::WelcomeController#index as */*
+  Parameters: {"/users"=>nil}
+  Rendering /Users/vczaran/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vczaran/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 22)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 274)
+
+
+Started GET "/?/users" for ::1 at 2023-06-07 16:24:25 -0400
+Processing by Rails::WelcomeController#index as */*
+  Parameters: {"/users"=>nil}
+  Rendering /Users/vczaran/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vczaran/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 16)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 207)
+
+
+Started GET "/users" for ::1 at 2023-06-07 16:25:51 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 1394)
+
+
+Started GET "/?/users" for ::1 at 2023-06-07 16:26:00 -0400
+Processing by Rails::WelcomeController#index as */*
+  Parameters: {"/users"=>nil}
+  Rendering /Users/vczaran/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vczaran/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.0ms | Allocations: 520)
+Completed 200 OK in 14ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 3758)
+
+
+Started GET "/users" for ::1 at 2023-06-07 16:26:05 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 8)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 409)
+
+
+Started GET "/users?fav_food=pizza" for ::1 at 2023-06-07 16:27:49 -0400
+Processing by UsersController#index as */*
+  Parameters: {"fav_food"=>"pizza"}
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 165)
+
+
+Started POST "/users" for ::1 at 2023-06-07 16:28:48 -0400
+
+AbstractController::ActionNotFound - The action 'create' could not be found for UsersController:
+
+Started POST "/users" for ::1 at 2023-06-07 16:29:59 -0400
+Processing by UsersController#create as */*
+  Parameters: {"fav_food"=>"pizza"}
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 253)
+
+
+Started GET "/users/2" for ::1 at 2023-06-07 16:31:11 -0400
+
+AbstractController::ActionNotFound - The action 'show' could not be found for UsersController:
+
+Started GET "/users/2" for ::1 at 2023-06-07 16:31:32 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 212)
+
+
+Started GET "/users" for ::1 at 2023-06-07 16:37:52 -0400
+Processing by UsersController#index as */*
+  Parameters: {"foods"=>{"pizza"=>"yummy", "chocolate"=>"yuummmyyyyyy"}}
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 1.0ms | Allocations: 379)
+
+
+Started POST "/users" for ::1 at 2023-06-07 16:38:46 -0400
+Processing by UsersController#create as */*
+  Parameters: {"foods"=>{"pizza"=>"yummy", "chocolate"=>"yuummmyyyyyy"}}
+Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 156)
+
+
+Started POST "/users" for ::1 at 2023-06-07 16:39:26 -0400
+Processing by UsersController#create as */*
+  Parameters: {"foods"=>{"pizza"=>"yummy", "chocolate"=>"yuummmyyyyyy", "sweets"=>{"cupcake"=>"YUM"}}}
+Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 138)
+
+
