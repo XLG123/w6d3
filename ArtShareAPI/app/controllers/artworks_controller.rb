@@ -23,7 +23,7 @@ class ArtworksController < ApplicationController
           artwork = Artwork.find(params[:id])
   
           if artwork.update(artwork_params)
-              redirect_to artworks_url(artist)
+              redirect_to artworks_url(artwork)
           else
               render json: artwork.errors.full_messages, status: :unprocessable_entity
           end
@@ -38,7 +38,8 @@ class ArtworksController < ApplicationController
       private
   
       def artwork_params
-          params.permit(:title, :artist_id, :image_url)
+        # debugger
+          params.require(:artwork).permit(:title, :artist_id, :image_url)
       end
   
 end
