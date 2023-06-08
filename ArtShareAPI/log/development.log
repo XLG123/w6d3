@@ -1879,3 +1879,178 @@ Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 730)
   [1m[36mArtworkShare Create (0.1ms)[0m  [1m[32mINSERT INTO "artwork_shares" ("artwork_id", "viewer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artwork_id", 3], ["viewer_id", 3], ["created_at", "2023-06-08 19:37:46.653618"], ["updated_at", "2023-06-08 19:37:46.653618"]]
   [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mArtwork Load (2.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+Started GET "/users/2/artworks" for ::1 at 2023-06-08 16:05:41 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+SyntaxError - syntax error, unexpected '\n', expecting =>
+... json: artworks, artwork_shares
+...                               ^
+/Users/vczaran/Desktop/AA-code/W6/w6d3/ArtShareAPI/app/controllers/artworks_controller.rb:47: syntax error, unexpected end-of-input, expecting `end':
+  app/controllers/artworks_controller.rb:7:in `'
+
+Started GET "/users/2/artworks" for ::1 at 2023-06-08 16:05:58 -0400
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"2"}
+  [1m[36mArtwork Load (1.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 2]]
+  ↳ app/controllers/artworks_controller.rb:7:in `index'
+Completed 500 Internal Server Error in 70ms (Views: 36.9ms | ActiveRecord: 10.3ms | Allocations: 12180)
+
+
+
+AbstractController::DoubleRenderError - Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".:
+  app/controllers/artworks_controller.rb:8:in `index'
+
+Started GET "/users/2/artworks" for ::1 at 2023-06-08 16:08:42 -0400
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"2"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.9ms | Allocations: 3949)
+
+
+
+ActiveRecord::StatementInvalid - PG::UndefinedColumn: ERROR:  column artworks.viewer_id does not exist
+LINE 1: ... "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"...
+                                                             ^:
+  app/controllers/artworks_controller.rb:7:in `index'
+
+Started GET "/users/2/artworks" for ::1 at 2023-06-08 16:09:02 -0400
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"2"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.9ms | Allocations: 3859)
+
+
+
+ActiveRecord::StatementInvalid - PG::UndefinedColumn: ERROR:  column artworks.artwork_id does not exist
+LINE 1: ... "artworks" WHERE "artworks"."artist_id" = $1 AND "artworks"...
+                                                             ^:
+  app/controllers/artworks_controller.rb:7:in `index'
+
+Started GET "/users/2/artworks" for ::1 at 2023-06-08 16:10:08 -0400
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"2"}
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 2]]
+  ↳ app/controllers/artworks_controller.rb:8:in `index'
+  [1m[36mArtworkShare Load (0.7ms)[0m  [1m[34mSELECT "artwork_shares".* FROM "artwork_shares" WHERE "artwork_shares"."viewer_id" = $1[0m  [["viewer_id", 2]]
+  ↳ app/controllers/artworks_controller.rb:8:in `index'
+Completed 200 OK in 32ms (Views: 11.0ms | ActiveRecord: 8.1ms | Allocations: 8666)
+
+
+Started GET "/users/2/artworks" for ::1 at 2023-06-08 16:11:00 -0400
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"2"}
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 2]]
+  ↳ app/controllers/artworks_controller.rb:7:in `index'
+  [1m[36mArtworkShare Load (0.3ms)[0m  [1m[34mSELECT "artwork_shares".* FROM "artwork_shares" WHERE "artwork_shares"."viewer_id" = $1[0m  [["viewer_id", 2]]
+  ↳ app/controllers/artworks_controller.rb:7:in `index'
+Completed 200 OK in 25ms (Views: 0.7ms | ActiveRecord: 6.1ms | Allocations: 7557)
+
+
+Started GET "/users/1/artworks" for ::1 at 2023-06-08 16:11:48 -0400
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"1"}
+  [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/controllers/artworks_controller.rb:7:in `index'
+  [1m[36mArtworkShare Load (0.2ms)[0m  [1m[34mSELECT "artwork_shares".* FROM "artwork_shares" WHERE "artwork_shares"."viewer_id" = $1[0m  [["viewer_id", 1]]
+  ↳ app/controllers/artworks_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 0.8ms | Allocations: 1400)
+
+
+Started GET "/users/3/artworks" for ::1 at 2023-06-08 16:12:00 -0400
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"3"}
+  [1m[36mArtwork Load (0.8ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 3]]
+  ↳ app/controllers/artworks_controller.rb:7:in `index'
+  [1m[36mArtworkShare Load (1.5ms)[0m  [1m[34mSELECT "artwork_shares".* FROM "artwork_shares" WHERE "artwork_shares"."viewer_id" = $1[0m  [["viewer_id", 3]]
+  ↳ app/controllers/artworks_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 2.4ms | Allocations: 1414)
+
+
+Started GET "/users/4/artworks" for ::1 at 2023-06-08 16:12:05 -0400
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"4"}
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 4]]
+  ↳ app/controllers/artworks_controller.rb:7:in `index'
+  [1m[36mArtworkShare Load (0.3ms)[0m  [1m[34mSELECT "artwork_shares".* FROM "artwork_shares" WHERE "artwork_shares"."viewer_id" = $1[0m  [["viewer_id", 4]]
+  ↳ app/controllers/artworks_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 1207)
+
+
+Started POST "/users" for ::1 at 2023-06-08 16:12:36 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"bleh"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 1982)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/users_controller.rb:41:in `user_params'
+  app/controllers/users_controller.rb:14:in `create'
+
+Started POST "/users" for ::1 at 2023-06-08 16:12:46 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"bleh"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "bleh"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "bleh"], ["created_at", "2023-06-08 20:12:47.009490"], ["updated_at", "2023-06-08 20:12:47.009490"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 8.3ms | Allocations: 7517)
+
+
+Started GET "/users" for ::1 at 2023-06-08 16:12:53 -0400
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"username"=>"bleh"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.6ms | Allocations: 1106)
+
+
+Started GET "/users/4/artworks" for ::1 at 2023-06-08 16:13:08 -0400
+Processing by ArtworksController#index as */*
+  Parameters: {"user"=>{"username"=>"bleh"}, "user_id"=>"4"}
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 4]]
+  ↳ app/controllers/artworks_controller.rb:7:in `index'
+  [1m[36mArtworkShare Load (0.3ms)[0m  [1m[34mSELECT "artwork_shares".* FROM "artwork_shares" WHERE "artwork_shares"."viewer_id" = $1[0m  [["viewer_id", 4]]
+  ↳ app/controllers/artworks_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1219)
+
+
+Started POST "/artworks" for ::1 at 2023-06-08 16:13:20 -0400
+Processing by ArtworksController#create as */*
+  Parameters: {"user"=>{"username"=>"bleh"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 613)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: artwork:
+  app/controllers/artworks_controller.rb:45:in `artwork_params'
+  app/controllers/artworks_controller.rb:18:in `create'
+
+Started POST "/artworks" for ::1 at 2023-06-08 16:14:02 -0400
+Processing by ArtworksController#create as */*
+  Parameters: {"artwork"=>{"title"=>"more_bleh", "artist_id"=>"4", "image_url"=>"bleh.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:19:in `create'
+  [1m[36mArtwork Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "artworks" WHERE "artworks"."title" = $1 AND "artworks"."artist_id" = $2 LIMIT $3[0m  [["title", "more_bleh"], ["artist_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:19:in `create'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:19:in `create'
+  [1m[36mArtwork Create (0.8ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "image_url", "artist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "more_bleh"], ["image_url", "bleh.com"], ["artist_id", 4], ["created_at", "2023-06-08 20:14:02.562884"], ["updated_at", "2023-06-08 20:14:02.562884"]]
+  ↳ app/controllers/artworks_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:19:in `create'
+Completed 200 OK in 46ms (Views: 0.6ms | ActiveRecord: 5.0ms | Allocations: 8371)
+
+
+Started GET "/users/4/artworks" for ::1 at 2023-06-08 16:14:17 -0400
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"4"}
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 4]]
+  ↳ app/controllers/artworks_controller.rb:7:in `index'
+  [1m[36mArtworkShare Load (0.2ms)[0m  [1m[34mSELECT "artwork_shares".* FROM "artwork_shares" WHERE "artwork_shares"."viewer_id" = $1[0m  [["viewer_id", 4]]
+  ↳ app/controllers/artworks_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1323)
+
+

@@ -3,8 +3,9 @@ class ArtworksController < ApplicationController
     def index
         if params.has_key?(:user_id)
             artworks = Artwork.where(artist_id: params[:user_id])
-            artwork_share
-            render json: artworks
+            artwork_shares = ArtworkShare.where(viewer_id: params[:user_id])
+            all = artworks + artwork_shares
+            render json: all
         end
     end
   
