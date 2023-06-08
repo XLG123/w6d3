@@ -1,8 +1,11 @@
 class ArtworksController < ApplicationController
 
     def index
-        artworks = Artwork.all
-        render json: artworks
+        #if params.has_value?(:artist_id)
+            artworks = Artwork.where(artist_id: params[:artist_id])
+            render json: artworks
+       # end
+
     end
   
       def show
@@ -38,7 +41,6 @@ class ArtworksController < ApplicationController
       private
   
       def artwork_params
-        # debugger
           params.require(:artwork).permit(:title, :artist_id, :image_url)
       end
   
